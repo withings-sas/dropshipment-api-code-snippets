@@ -34,6 +34,12 @@ To launch tests use : `npx jest`
 
 **Warning** : tests won't run properly when the `main()` function of the file is uncommented.
 
+### Feedbacks
+
+What do you think of the snippets? Are they helpful? Can they be improved? Let us know by answering [these three questions](https://withings.typeform.com/to/oDi2P0KT).
+
+Also, feel free to fill in an issue if you find an issue with this project.
+
 ### Changelog
 
 - v1 : First version of the code snippets
