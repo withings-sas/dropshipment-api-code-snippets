@@ -1,6 +1,6 @@
 const axios   = require('axios');
 const { CLIENT_ID, CLIENT_SECRET, API_ENDPOINT } = require('../../config');
-const { sign }        = require('../../signature/getnonce/getnonce');
+const { sign, getNonce }        = require('../../signature/getnonce/getnonce');
 const { parseErrors } = require('../../utils');
 
 // Constants
@@ -23,7 +23,7 @@ async function createOrder(nonce, order, testmode) {
   return data.body.orders;
 }
 
-async function main() {
+async function main(customerRefId) {
   const address   = {
     name: 'John Doe',
     company_name: 'Company',
@@ -43,7 +43,7 @@ async function main() {
     }
   ];
   const order     = {
-    customer_ref_id: 'customer-ref-id-5', //the id of this order on your side
+    customer_ref_id: customerRefId, //the id of this order on your side
     address,
     products,
     force_address: true,
@@ -53,7 +53,9 @@ async function main() {
   console.log(JSON.stringify(response));
 }
 
-//main();
+
+let customerRefId = 'customer-ref-id';
+//main(customerRefId);
 
 
 

@@ -1,7 +1,6 @@
-const crypto  = require('crypto');
 const axios   = require('axios');
 const { CLIENT_ID, CLIENT_SECRET, API_ENDPOINT } = require('../../config');
-const { sign }        = require('../../signature/getnonce/getnonce');
+const { sign, getNonce }        = require('../../signature/getnonce/getnonce');
 const { parseErrors } = require('../../utils');
 
 

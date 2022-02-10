@@ -1,6 +1,6 @@
 const axios   = require('axios');
 const { CLIENT_ID, CLIENT_SECRET, API_ENDPOINT } = require('../../config');
-const { sign }        = require('../../signature/getnonce/getnonce');
+const { sign, getNonce }        = require('../../signature/getnonce/getnonce');
 const { parseErrors } = require('../../utils');
 
 // Constants
@@ -112,7 +112,8 @@ async function main() {
   }
   const user = {...mandatory_params_user, ...optional_params_user};
   const now = Math.round((Date.now() / 1000));
-  createUserOrder(await getNonce(now), order, user, TESTMODE_FAILED);
+  const response = await createUserOrder(await getNonce(now), order, user, TESTMODE_FAILED);
+  console.log(JSON.stringify(response));
 }
 
 //main();
