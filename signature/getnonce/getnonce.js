@@ -35,7 +35,7 @@ async function getNonce(timestamp) {
 }
 
 async function main() {
-  const now = Math.round((Date.now() / 1000));
+  const now = Math.round((Date.now() / 1000) + 21); // Add any number between 21 ~ 61 to avoid error "Timestamp too old"
   const nonce = await getNonce(now);
   console.log(nonce);
 }
